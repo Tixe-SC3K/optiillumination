@@ -17,8 +17,8 @@ The source code is available here: **https://github.com/Tixe-SC3K/optiilluminati
 
 
 
-[Image of screenshot.png]
 
+![](screenshot.png) 
 
 ---
 
