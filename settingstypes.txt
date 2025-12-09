@@ -1,0 +1,1 @@
+optiIllumanition.interval (Update Interval) float 0.15
