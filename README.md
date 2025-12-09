@@ -1,6 +1,5 @@
 # OptiIllumination (Optimized Illumination) [optiIllumanition]
 
-[![ContentDB](https://content.minetest.net/packages/tixe/optiillumination/shields/downloads/)](https://content.minetest.net/packages/tixe/optiillumination/)
 
 **OptiIllumination** is an optimized, high-performance fork of the popular Minetest illumination mod. It uses position caching and a throttled globalstep to significantly **reduce CPU load** while maintaining identical visual functionality.
 
