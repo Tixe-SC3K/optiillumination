@@ -2,7 +2,7 @@ local player_lights = {}
 local timer = 0
 
 -- Load interval from settings (default to 0.15s if not set)
-local UPDATE_INTERVAL = tonumber(minetest.settings:get("optiIllumanition.interval")) or 0.15
+local UPDATE_INTERVAL = tonumber(minetest.settings:get("optiillumination.interval")) or 0.15
 
 -- Helper: Check if node can be replaced by light
 local function can_replace(pos)
@@ -37,9 +37,9 @@ local function get_light_level(player)
 end
 
 local function get_light_node(level)
-	if level >= 14 then return "optiIllumanition:light_14"
+	if level >= 14 then return "optiillumination:light_14"
 	elseif level < 1 then return nil end
-	return "optiIllumanition:light_" .. level
+	return "optiillumination:light_" .. level
 end
 
 local function find_light_pos(pos)
@@ -152,7 +152,7 @@ end
 
 -- Register Light Nodes (Invisible, 1-14)
 for n = 1, 14 do
-	minetest.register_node("optiIllumanition:light_"..n, {
+	minetest.register_node("optiillumination:light_"..n, {
 		drawtype = "airlike",
 		paramtype = "light",
 		light_source = n,
@@ -167,14 +167,14 @@ end
 -- Cleanup LBM (Removes stray lights on map load)
 minetest.register_lbm({
 	label = "Opti Illumination Cleanup",
-	name = "optiIllumanition:cleanup",
+	name = "optiillumination:cleanup",
 	nodenames = {"group:opti_illum_light"},
 	run_at_every_load = true,
 	action = function(pos) minetest.set_node(pos, {name = "air"}) end,
 })
 
 -- Aliases
-minetest.register_alias("optiIllumanition:light_faint", "optiIllumanition:light_4")
-minetest.register_alias("optiIllumanition:light_dim", "optiIllumanition:light_8")
-minetest.register_alias("optiIllumanition:light_mid", "optiIllumanition:light_12")
-minetest.register_alias("optiIllumanition:light_full", "optiIllumanition:light_14")
+minetest.register_alias("optiillumination:light_faint", "optiillumination:light_4")
+minetest.register_alias("optiillumination:light_dim", "optiillumination:light_8")
+minetest.register_alias("optiillumination:light_mid", "optiillumination:light_12")
+minetest.register_alias("optiillumination:light_full", "optiillumination:light_14")
